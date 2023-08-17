@@ -1,6 +1,8 @@
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
@@ -52,12 +54,8 @@ public class MainPageTests extends TestBase{
     }
 
     @Test
-    void test1() {
+    void checkAppearsBannerTest() {
         open("https://www.thebach.com");
-        $(".navbar_link").sibling(1).click();
-        $(".filters_item-2").sibling(0).click();
-        $("").shouldHave(cssClass("C70568"));
-
-
+        $(".fixed.inset-x-2").shouldBe(visible, Duration.ofSeconds(30));
     }
-    }
+}
