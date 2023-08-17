@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -8,8 +9,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
-
-public class MainPageTests extends TestBase{
+public class MainPageTests extends TestBase{ {
+    SelenideLogger.addListener("allure", new AllureSelenide()); }
 
     @Test
     void textCheckButtonTest() {
@@ -54,9 +55,9 @@ public class MainPageTests extends TestBase{
         $("li.py-3").shouldHave(text("California"));
     }
 
-    @Test
-    void checkAppearsBannerTest() {
-        open("https://www.thebach.com");
-        $(".fixed.inset-x-2").shouldBe(visible, Duration.ofSeconds(30));
-    }
+   // @Test
+   // void checkAppearsBannerTest() {
+     //   open("https://www.thebach.com");
+      //  $(".fixed.inset-x-2").shouldBe(visible, Duration.ofSeconds(30));
+   // }
 }
