@@ -14,8 +14,8 @@ public class TestBase {
         Configuration.browserVersion = "100";
         //Configuration.remote = "false";
     }
-//    @AfterEach
-//    static void afterEach(){
-//        Selenide.closeWebDriver();
-//    }
+   @AfterEach
+     void afterEach(){
+        Selenide.closeWebDriver();
+    }
 }

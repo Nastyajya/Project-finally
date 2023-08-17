@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -12,7 +13,7 @@ public class MainPageTests extends TestBase{
 
     @Test
     void textCheckButtonTest() {
-        open();
+        open("https://www.thebach.com");
         $("#start-browsing-button").shouldHave(Condition.text("Start browsing now"));
     }
 
