@@ -18,7 +18,7 @@ public class ElementPage {
 
     public ElementPage openPage() {
        step("Open page", () -> {
-           open("");
+           open("https://www.thebach.com/");
        });
         return this;
     }

@@ -25,7 +25,7 @@ public class TextPage {
 
     public TextPage openPage() {
         step("Open page", () -> {
-            open("");
+            open("https://www.thebach.com/");
         });
         return this;
     }
