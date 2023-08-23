@@ -6,32 +6,37 @@ import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import uitests.config.WebDriverConfig;
+import uitests.config.WebDriverProvider;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 
+
 public class TestBase {
 
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = "https://www.thebach.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.browser = "chrome";
-        Configuration.browserVersion = "100";
+    @BeforeEach
+    public void addLogger() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        //Configuration.remote = "false";
     }
-
-   @AfterEach
-
-       void addAttachments() {
-           Attach.screenshotAs("Last screenshot");
-           Attach.pageSource();
-           Attach.browserConsoleLogs();
-           Attach.addVideo();
-
-           closeWebDriver();
-       }
-
-   }
-
+    @BeforeAll
+    static void configure() {
+        WebDriverProvider.configuration();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+        Configuration.pageLoadStrategy = "eager";
+    }
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
+        closeWebDriver();
+    }
+}

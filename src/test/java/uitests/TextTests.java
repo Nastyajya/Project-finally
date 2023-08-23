@@ -1,7 +1,10 @@
 package uitests;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Test;
 import uitests.pages.TextPage;
-
+@Owner("A.Zelenskaia")
+@Epic("UI")
 public class TextTests extends TestBase {
     TextPage textPage = new TextPage();
 
