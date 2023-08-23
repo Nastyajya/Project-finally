@@ -25,10 +25,6 @@ public class TestBase {
     static void configure() {
         WebDriverProvider.configuration();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
         Configuration.pageLoadStrategy = "eager";
     }
     @AfterEach

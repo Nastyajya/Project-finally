@@ -23,7 +23,7 @@ public class TextPage {
             appearText = $("li.py-3");
 
     public TextPage openPage() {
-        open("https://www.thebach.com/");
+        open("");
         return this;
     }
 

@@ -17,7 +17,7 @@ public class ElementPage {
             bannerMessages = $(".intercom-i3hv2l");
 
     public ElementPage openPage() {
-        open("https://www.thebach.com/");
+        open("");
         return this;
     }
     public ElementPage setContentCard() {
