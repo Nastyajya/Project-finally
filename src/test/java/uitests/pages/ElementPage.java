@@ -5,44 +5,44 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 
 public class ElementPage {
     SelenideElement
             contentCard = $(".experiences_card-content"),
             contentMain = $("#main-content"),
             shareButton = $("#self-start"),
-            textButton = $(".py-4.text-base"),
             dialogueButton = $(".fixed.bottom-6"),
             dialogWindow = $(".intercom-ruskli"),
             bannerMessages = $(".intercom-i3hv2l");
 
     public ElementPage openPage() {
-        open("");
+       step("Open page", () -> {
+           open("");
+       });
         return this;
     }
     public ElementPage setContentCard() {
-        contentCard.click();
-        return this;
-    }
+        step("Click on activity widget", () -> {
+            contentCard.click();
+        });
+            return this;
+        }
 
-
-    public ElementPage setContentMain() {
-        contentMain.$("#self-start");
+     public ElementPage setContentMain() {
+          contentMain.$("#self-start");
         return this;
     }
 
     public ElementPage verifyShareButton() {
-        shareButton.shouldBe(hidden);
-        return this;
-    }
-
-    public ElementPage setTextButton() {
-        textButton.click();
+        step("Checking for the presence of the share element", () -> {  shareButton.shouldBe(hidden);
+        });
         return this;
     }
 
     public ElementPage setDialogueButton() {
-        dialogueButton.click();
+        step("Click on the dialogue button", () -> {  dialogueButton.click();
+        });
         return this;
     }
 
@@ -51,7 +51,8 @@ public class ElementPage {
         return this;
     }
     public ElementPage verifyBannerMessages() {
-        bannerMessages.shouldBe(hidden);
+        step("Checking for the presence of the messenger element", () -> { bannerMessages.shouldBe(hidden);
+        });
         return this;
     }
 }

@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 
 public class TextPage {
     SelenideElement
@@ -23,63 +24,88 @@ public class TextPage {
             appearText = $("li.py-3");
 
     public TextPage openPage() {
-        open("");
+        step("Open page", () -> {
+            open("");
+        });
         return this;
     }
 
     public TextPage verifyStartButton(String value) {
-        startButton.shouldHave(text(value));
+        step("Checking the text on the button", () -> {
+            startButton.shouldHave(text(value));
+        });
         return this;
     }
 
     public TextPage setDropdownMenu() {
-        dropdownMenu.click();
+        step("Сlick on the menu", () -> {
+            dropdownMenu.click();
+        });
         return this;
     }
 
     public TextPage setTextMenu() {
-        textMenu.click();
+        step("Сlick on city guides", () -> {
+            textMenu.click();
+        });
         return this;
     }
 
     public TextPage verifyHeadingWrap(String value) {
-        headingWrap.shouldHave(text(value));
+        step("Checking for the correct header", () -> {
+            headingWrap.shouldHave(text(value));
+        });
         return this;
     }
 
     public TextPage setDropdownToggle() {
-        dropdownToggle.hover();
+        step("Hover over the radar icon", () -> {
+            dropdownToggle.hover();
+        });
         return this;
     }
 
     public TextPage verifyDropdownList(String value) {
-        dropdownList.shouldHave(text(value));
+        step("The text should appear above the radar icon", () -> {
+            dropdownList.shouldHave(text(value));
+        });
         return this;
     }
 
     public TextPage setReviewSlide() {
-        reviewSlide.click();
+        step("Click on next review", () -> {
+            reviewSlide.click();
+        });
         return this;
     }
 
     public TextPage verifyNextReviewSlide(String value) {
-        nextReviewSlide.shouldHave(text(value));
+        step("The slide should display the correct text", () -> {
+            nextReviewSlide.shouldHave(text(value));
+        });
         return this;
     }
 
     public TextPage setExploreLink() {
-        exploreLink.click();
-        $(withText("Nashville, TN")).click();
+        step("Go to city selection menu", () -> {
+            exploreLink.click();
+            $(withText("Nashville, TN")).click();
+        });
         return this;
     }
 
     public TextPage writeTextInput(String value) {
-        textInput.setValue(value);
+        step("Print the first two letters of the city", () -> {
+            exploreLink.click();
+            textInput.setValue(value);
+        });
         return this;
     }
 
     public TextPage verifyAppearText(String value) {
-        appearText.shouldHave(text(value));
+        step("Check that a list with the full name of the city is displayed", () -> {
+            appearText.shouldHave(text(value));
+        });
         return this;
     }
 

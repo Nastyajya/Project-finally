@@ -23,7 +23,6 @@ public class ElementTests extends TestBase {
     public void checkBannerMessagesTest() {
         elementPage.openPage()
                 .setContentCard()
-                .setTextButton()
                 .setDialogueButton()
                 .setDialogWindow()
 
