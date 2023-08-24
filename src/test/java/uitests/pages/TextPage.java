@@ -96,7 +96,7 @@ public class TextPage {
 
     public TextPage writeTextInput(String value) {
         step("Print the first two letters of the city", () -> {
-            exploreLink.click();
+            textInput.click();
             textInput.setValue(value);
         });
         return this;

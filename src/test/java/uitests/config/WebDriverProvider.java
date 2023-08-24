@@ -13,7 +13,7 @@ public class WebDriverProvider {
         Configuration.browserSize = config.getBrowserSize();
         String remoteUrl = config.getRemoteURL();
        if (remoteUrl != null) {
-           Configuration.baseUrl = config.getBaseUrl();
+           Configuration.remote = config.getRemoteURL();
         }
 
     }
