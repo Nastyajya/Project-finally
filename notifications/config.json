@@ -1,6 +1,6 @@
 {
   "base": {
-    "project": "Api project",
+    "project": "UI project",
     "environment": "",
     "comment": "",
     "reportLink": "https://jenkins.autotests.cloud",
