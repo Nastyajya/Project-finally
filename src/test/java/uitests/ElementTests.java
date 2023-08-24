@@ -25,7 +25,7 @@ public class ElementTests extends TestBase {
                 .setContentCard()
                 .setDialogueButton()
                 .setDialogWindow()
-
+                
                 .verifyBannerMessages();
     }
 }
