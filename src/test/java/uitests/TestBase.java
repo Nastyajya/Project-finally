@@ -1,7 +1,6 @@
 package uitests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -14,8 +13,6 @@ import uitests.config.WebDriverProvider;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.webdriver;
-import static io.qameta.allure.Allure.attachment;
 
 
 public class TestBase {
@@ -29,7 +26,7 @@ public class TestBase {
     static void configure() {
         WebDriverProvider.configuration();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-       DesiredCapabilities capabilities = new DesiredCapabilities();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
