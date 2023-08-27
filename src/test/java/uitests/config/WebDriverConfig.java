@@ -2,8 +2,10 @@ package uitests.config;
 
 import org.aeonbits.owner.Config;
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:config/${env}.local.properties"
+        "system:properties",
+        "classpath:configs/${env}.properties"
 })
     public interface WebDriverConfig extends Config {
         @Key("baseUrl")
@@ -11,7 +13,7 @@ import org.aeonbits.owner.Config;
         String getBaseUrl();
 
         @Key("browser")
-        @DefaultValue("CHROME")
+        @DefaultValue("chrome")
         String getBrowser();
 
         @Key("browserVersion")
@@ -19,12 +21,16 @@ import org.aeonbits.owner.Config;
         String getBrowserVersion();
 
         @Key("browserSize")
-        @DefaultValue("114.0")
+        @DefaultValue("1920x1080")
         String getBrowserSize();
 
         @Key("remoteUrl")
         @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
         String getRemoteURL();
+
+        @Key("isRemote")
+        @DefaultValue("false")
+        boolean isRemote();
     }
 
 

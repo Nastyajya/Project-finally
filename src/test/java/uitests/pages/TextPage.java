@@ -1,6 +1,8 @@
 package uitests.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.aeonbits.owner.ConfigFactory;
+import uitests.config.WebDriverConfig;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -10,6 +12,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class TextPage {
+    WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     SelenideElement
             startButton = $("#start-browsing-button"),
             dropdownMenu = $("[id=w-dropdown-toggle-0]"),
@@ -25,7 +28,7 @@ public class TextPage {
 
     public TextPage openPage() {
         step("Open page", () -> {
-            open("https://www.thebach.com/");
+            open(config.getBaseUrl());
         });
         return this;
     }

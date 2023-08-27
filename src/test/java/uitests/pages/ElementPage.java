@@ -1,6 +1,8 @@
 package uitests.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.aeonbits.owner.ConfigFactory;
+import uitests.config.WebDriverConfig;
 
 import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Selenide.$;
@@ -8,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class ElementPage {
+    WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
     SelenideElement
             contentCard = $(".experiences_card-content"),
             contentMain = $("#main-content"),
@@ -18,7 +21,7 @@ public class ElementPage {
 
     public ElementPage openPage() {
        step("Open page", () -> {
-           open("https://www.thebach.com/");
+           open(config.getBaseUrl());
        });
         return this;
     }
