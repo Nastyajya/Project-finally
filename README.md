@@ -1,4 +1,4 @@
-<h1>Thesis project on automated site testing <a                                   href="https://www.thebach.com/">https://www.thebach.com</a></h1>
+<h1>Thesis project on automated site testing <a                                   href="https://www.thebach.com/">thebach.com</a></h1>
 
 <img src="media/logo/Logo_png.svg" width="250">
 
