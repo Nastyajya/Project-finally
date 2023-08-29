@@ -29,7 +29,7 @@ import org.aeonbits.owner.Config;
         String getRemoteURL();
 
         @Key("isRemote")
-        @DefaultValue("false")
+        @DefaultValue("true")
         boolean isRemote();
     }
 
