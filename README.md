@@ -1,6 +1,6 @@
 <h1>Thesis project on automated site testing <a href="https://www.thebach.com/" ">BACH</a></h1>
 
-![Logo_png.svg](media/logo/Logo_png.svg) width="100">
+<img src="media/logo/Logo_png.svg" width="100">
 
 ## :bookmark_tabs: Content 
 - <a href="#tools">Stack of technologies</a>
