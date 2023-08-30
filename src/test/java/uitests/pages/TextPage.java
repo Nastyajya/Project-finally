@@ -40,7 +40,7 @@ public class TextPage {
         return this;
     }
 
-    public TextPage setDropdownMenu() {
+   public TextPage setDropdownMenu() {
         step("Сlick on the menu", () -> {
             dropdownMenu.click();
         });
