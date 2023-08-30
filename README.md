@@ -14,16 +14,16 @@
 
 <a id="tools"></a>
 ## :computer: Stack of technologies
-<code><img width="15%" title="IntelliJ IDEA" src="media/logo/Idea.svg"></code>
-<code><img width="15%" title="Java" src="media/logo/Java.svg"></code>
-<code><img width="15%" title="Junit5" src="media/logo/Junit5.svg"></code>
-<code><img width="15%" title="Gradle" src="media/logo/Gradle.svg"></code>
-<code><img width="15%" title="GitHub" src="media/logo/GitHub.svg"></code>
-<code><img width="15%" title="Jenkins" src="media/logo/Jenkins.svg"></code>
-<code><img width="15%" title="Allure Report" src="media/logo/Allure.svg"></code>
-<code><img width="15%" title="Allure TestOps" src="media/logo/Allure_TO.svg"></code>
-<code><img width="15%" title="Telegram" src="media/logo/Telegram.svg"></code>
-<code><img width="15%" title="Selenoid" src="media/logo/Selenoid.svg"></code>
+<code><img width="5%" title="IntelliJ IDEA" src="media/logo/Idea.svg"></code>
+<code><img width="5%" title="Java" src="media/logo/Java.svg"></code>
+<code><img width="5%" title="Junit5" src="media/logo/Junit5.svg"></code>
+<code><img width="5%" title="Gradle" src="media/logo/Gradle.svg"></code>
+<code><img width="5%" title="GitHub" src="media/logo/GitHub.svg"></code>
+<code><img width="5%" title="Jenkins" src="media/logo/Jenkins.svg"></code>
+<code><img width="5%" title="Allure Report" src="media/logo/Allure.svg"></code>
+<code><img width="5%" title="Allure TestOps" src="media/logo/Allure_TO.svg"></code>
+<code><img width="5%" title="Telegram" src="media/logo/Telegram.svg"></code>
+<code><img width="5%" title="Selenoid" src="media/logo/Selenoid.svg"></code>
 </p>
 
 ## Checks carried out:
