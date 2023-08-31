@@ -28,9 +28,10 @@
 
 ## Checks carried out:
 
-- [x] 
-- [x] 
-- [x]
+- [x] Checking the display of buttons
+- [x] Checking the correctness of the text display
+- [x] Checking whether the popup is displayed
+- [x] Set зredictive сheck 
 
  
  <a id="console"></a>
