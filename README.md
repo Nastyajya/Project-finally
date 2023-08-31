@@ -95,8 +95,4 @@ After passing all the tests, an automatic report is sent to the <code>Telegram</
 
 
 
-[ Up⬆](#Ссылка)
-
-
-
 
