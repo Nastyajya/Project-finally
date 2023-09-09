@@ -1,5 +1,5 @@
 <h1>
-Diploma project on automated testing of thebach.com website <a                                   href="https://www.thebach.com/">thebach.com</a></h1>
+Diploma project on automated testing of <a                                   href="https://www.thebach.com/">thebach.com</a></h1>
 
 <img src="media/logo/Logo_png.svg" width="250">
 
