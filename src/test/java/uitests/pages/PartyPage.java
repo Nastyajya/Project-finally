@@ -1,6 +1,8 @@
 package uitests.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -13,11 +15,9 @@ public class PartyPage {
             shareButton = $("#self-start"),
             dialogueButton = $(".fixed.bottom-6");
 
-
+@Step("Checking for the correct header")
     public PartyPage verifyHeadingWrap(String value) {
-        step("Checking for the correct header", () -> {
             headingWrap.shouldHave(text(value));
-        });
         return this;
     }
 
@@ -25,17 +25,14 @@ public class PartyPage {
         contentMain.$("#self-start");
         return this;
     }
-
+@Step("Checking for the presence of the share element")
     public PartyPage verifyShareButton() {
-        step("Checking for the presence of the share element", () -> {
             shareButton.shouldBe(hidden);
-        });
         return this;
     }
+    @Step("Click on the dialogue button")
     public PartyPage setDialogueButton() {
-        step("Click on the dialogue button", () -> {
             dialogueButton.click();
-        });
         return this;
     }
 }

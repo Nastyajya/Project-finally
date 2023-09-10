@@ -1,6 +1,7 @@
 package uitests.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.aeonbits.owner.ConfigFactory;
 import uitests.config.WebDriverConfig;
 
@@ -8,7 +9,6 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static io.qameta.allure.Allure.step;
 
 public class MainPage {
     WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
@@ -22,62 +22,50 @@ public class MainPage {
             dropdownList = $("[id=w-dropdown-list-4]"),
             nextReviewSlide = $("#splide03-slide03");
 
+    @Step("Open page")
     public MainPage openPage() {
-        step("Open page", () -> {
-            open(config.getBaseUrl());
-        });
+            open("");
         return this;
     }
-
+@Step("Checking the text on the button")
     public MainPage verifyStartButton(String value) {
-        step("Checking the text on the button", () -> {
             startButton.shouldHave(text(value));
-        });
         return this;
     }
-
+@Step("Сlick on the menu")
     public MainPage setDropdownMenu() {
-        step("Сlick on the menu", () -> {
             dropdownMenu.click();
-        });
         return this;
     }
-
+@Step("Hover over the radar icon")
     public MainPage setDropdownToggle() {
-        step("Hover over the radar icon", () -> {
             dropdownToggle.hover();
-        });
         return this;
     }
+    @Step("Click on next review")
     public MainPage setReviewSlide() {
-        step("Click on next review", () -> {
             reviewSlide.click();
-        });
         return this;
     }
+    @Step("Go to city selection menu")
     public MainPage setExploreLink() {
-        step("Go to city selection menu", () -> {
             exploreLink.click();
             $(withText("Nashville, TN")).click();
-        });
         return this;
     }
+    @Step("Click on activity widget")
     public MainPage setContentCard() {
-        step("Click on activity widget", () -> {
             contentCard.click();
-        });
         return this;
     }
+    @Step("The text should appear above the radar icon")
     public MainPage verifyDropdownList(String value) {
-        step("The text should appear above the radar icon", () -> {
             dropdownList.shouldHave(text(value));
-        });
         return this;
     }
+    @Step("The slide should display the correct text")
     public MainPage verifyNextReviewSlide(String value) {
-        step("The slide should display the correct text", () -> {
             nextReviewSlide.shouldHave(text(value));
-        });
         return this;
     }
 }
