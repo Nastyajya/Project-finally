@@ -3,29 +3,31 @@ package uitests;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Test;
-import uitests.pages.ElementPage;
+import uitests.pages.DialogPage;
+import uitests.pages.MainPage;
+import uitests.pages.PartyPage;
 
 @Owner("A.Zelenskaia")
 @Epic("UI")
 public class ElementTests extends TestBase {
-    ElementPage elementPage = new ElementPage();
+    MainPage mainPage = new MainPage();
+    PartyPage partyPage = new PartyPage();
+    DialogPage dialogPage = new DialogPage();
 
     @Test
     public void checkShareButtonTest() {
-        elementPage.openPage()
-                .setContentCard()
-                .setContentMain()
-
+        mainPage.openPage()
+                .setContentCard();
+        partyPage.setContentMain()
                 .verifyShareButton();
     }
 
     @Test
     public void checkBannerMessagesTest() {
-        elementPage.openPage()
-                .setContentCard()
-                .setDialogueButton()
-                .setDialogWindow()
-                
+        mainPage.openPage()
+                .setContentCard();
+        partyPage.setDialogueButton();
+        dialogPage.setDialogWindow()
                 .verifyBannerMessages();
     }
 }

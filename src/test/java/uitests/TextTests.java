@@ -1,47 +1,55 @@
 package uitests;
+
 import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Test;
-import uitests.pages.TextPage;
+import uitests.pages.CitiesPage;
+import uitests.pages.DropdownPage;
+import uitests.pages.MainPage;
+import uitests.pages.PartyPage;
+
 @Owner("A.Zelenskaia")
 @Epic("UI")
 public class TextTests extends TestBase {
-    TextPage textPage = new TextPage();
+    MainPage mainPage = new MainPage();
+    DropdownPage dropdownPage = new DropdownPage();
+    PartyPage partyPage = new PartyPage();
+    CitiesPage citiesPage = new CitiesPage();
 
     @Test
     public void textCheckButtonTest() {
-        textPage.openPage()
+        mainPage.openPage()
                 .verifyStartButton("Start browsing now");
     }
 
     @Test
     public void validTextCheckTest() {
-        textPage.openPage()
-                .setDropdownMenu()
-                .setTextMenu()
-                .verifyHeadingWrap("Planning a 2023 Miami");
+        mainPage.openPage()
+                .setDropdownMenu();
+        dropdownPage.setTextMenu();
+        partyPage.verifyHeadingWrap("Planning a 2023 Miami");
     }
 
 
     @Test
     public void checkTextAppearsHoverTest() {
-        textPage.openPage()
+        mainPage.openPage()
                 .setDropdownToggle()
                 .verifyDropdownList("Las Vegas, NV");
     }
 
     @Test
     public void textShouldChangeAfterClickingTest() {
-        textPage.openPage()
+        mainPage.openPage()
                 .setReviewSlide()
                 .verifyNextReviewSlide("Such a cool app!");
     }
 
     @Test
     public void fullTextShouldAppearTest() {
-        textPage.openPage()
-                .setExploreLink()
-                .writeTextInput("ca")
-                .verifyAppearText("California");
+        mainPage.openPage()
+                .setExploreLink();
+        citiesPage.writeTextInput("ca");
+        dropdownPage.verifyAppearText("California");
     }
 }
