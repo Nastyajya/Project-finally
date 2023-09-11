@@ -7,30 +7,30 @@ import org.aeonbits.owner.Config;
         "system:properties",
         "classpath:configs/${env}.properties"
 })
-    public interface WebDriverConfig extends Config {
-        @Key("baseUrl")
-        @DefaultValue("https://www.thebach.com/")
-        String getBaseUrl();
+public interface WebDriverConfig extends Config {
+    @Key("baseUrl")
+    @DefaultValue("https://www.thebach.com/")
+    String getBaseUrl();
 
-        @Key("browser")
-        @DefaultValue("chrome")
-        String getBrowser();
+    @Key("browser")
+    @DefaultValue("chrome")
+    String getBrowser();
 
-        @Key("browserVersion")
-        @DefaultValue("100.0")
-        String getBrowserVersion();
+    @Key("browserVersion")
+    @DefaultValue("100.0")
+    String getBrowserVersion();
 
-        @Key("browserSize")
-        @DefaultValue("1920x1080")
-        String getBrowserSize();
+    @Key("browserSize")
+    @DefaultValue("1920x1080")
+    String getBrowserSize();
 
-        @Key("remoteUrl")
-        @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
-        String getRemoteURL();
+    @Key("remoteUrl")
+    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
+    String getRemoteURL();
 
-        @Key("isRemote")
-        @DefaultValue("false")
-        boolean isRemote();
-    }
+    @Key("isRemote")
+    @DefaultValue("false")
+    boolean isRemote();
+}
 
 

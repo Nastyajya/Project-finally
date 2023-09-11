@@ -17,9 +17,10 @@ public class DropdownPage {
         textMenu.click();
         return this;
     }
-@Step("Check that a list with the full name of the city is displayed")
+
+    @Step("Check that a list with the full name of the city is displayed")
     public DropdownPage verifyAppearText(String value) {
-            appearText.shouldHave(text(value));
+        appearText.shouldHave(text(value));
         return this;
     }
 }

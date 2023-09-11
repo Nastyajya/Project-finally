@@ -6,7 +6,6 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static io.qameta.allure.Allure.step;
 
 public class PartyPage {
     SelenideElement
@@ -15,9 +14,9 @@ public class PartyPage {
             shareButton = $("#self-start"),
             dialogueButton = $(".fixed.bottom-6");
 
-@Step("Checking for the correct header")
+    @Step("Checking for the correct header")
     public PartyPage verifyHeadingWrap(String value) {
-            headingWrap.shouldHave(text(value));
+        headingWrap.shouldHave(text(value));
         return this;
     }
 
@@ -25,14 +24,16 @@ public class PartyPage {
         contentMain.$("#self-start");
         return this;
     }
-@Step("Checking for the presence of the share element")
+
+    @Step("Checking for the presence of the share element")
     public PartyPage verifyShareButton() {
-            shareButton.shouldBe(hidden);
+        shareButton.shouldBe(hidden);
         return this;
     }
+
     @Step("Click on the dialogue button")
     public PartyPage setDialogueButton() {
-            dialogueButton.click();
+        dialogueButton.click();
         return this;
     }
 }
